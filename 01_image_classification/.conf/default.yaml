@@ -1,7 +1,7 @@
 defaults:
   - _self_
   - logger: tensorboard
-  - model: resnet18
+  - model: resnet
   - metric: f1_score
   - optimizer: adamw
   - criterion: cross_entropy
