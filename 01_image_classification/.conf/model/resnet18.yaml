@@ -1,0 +1,5 @@
+_target_: torchvision.models.resnet18
+freeze: false
+n_classes: ${general.n_classes}
+params:
+  pretrained: true

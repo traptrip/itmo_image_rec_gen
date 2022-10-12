@@ -1,0 +1,2 @@
+_target_: pipeline.data.fruits.FruitsDataset
+root: ${general.project_dir}/datasets/fruits-360_dataset/fruits-360
