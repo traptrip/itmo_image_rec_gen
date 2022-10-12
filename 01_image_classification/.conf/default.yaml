@@ -22,7 +22,7 @@ general:
   image_height: 224
   amp: true
   save_scripted_model: true
-  pretrained_weights: ${general.artifacts_dir}/${general.run_name}/${general.checkpoint_path}/best.pt # null
+  pretrained_weights: null # ${general.artifacts_dir}/${general.run_name}/${general.checkpoint_path}/best.pt # null
   project_dir: ${hydra:runtime.cwd}
   checkpoint_path: weights
   artifacts_dir: ${general.project_dir}/logs/train_artifacts

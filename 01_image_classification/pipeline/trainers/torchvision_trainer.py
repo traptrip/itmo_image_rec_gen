@@ -8,7 +8,7 @@ from .base_trainer import Trainer  # noqa
 class TorchVisionTrainer(Trainer):
     def _initialize_model(self) -> Any:
         model_cfg = self.cfg.model
-        model = load_obj(model_cfg._target_)(model_cfg.params)
+        model = load_obj(model_cfg._target_)(**model_cfg.params)
         if model_cfg.freeze:
             for mp in model.parameters():
                 mp.requires_grad = False
@@ -17,6 +17,10 @@ class TorchVisionTrainer(Trainer):
         elif "mobilenet" in model_cfg._target_.lower():
             model.classifier[-1] = nn.Linear(
                 model.classifier[-1].in_features, model_cfg.n_classes
+            )
+        elif "vit" in model_cfg._target_.lower():
+            model.heads.head = torch.nn.Linear(
+                model.heads.head.in_features, model_cfg.n_classes
             )
         else:
             raise ValueError("No such model!")
