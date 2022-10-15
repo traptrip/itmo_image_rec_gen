@@ -1,4 +1,5 @@
 from typing import Any
+from pathlib import Path
 import torch
 import torch.nn as nn
 from ..utils import load_obj  # noqa
@@ -24,7 +25,7 @@ class TorchVisionTrainer(Trainer):
             )
         else:
             raise ValueError("No such model!")
-        if self.cfg.general.pretrained_weights:
+        if self.cfg.general.pretrained_weights is not None and Path(self.cfg.general.pretrained_weights).exists():
             weights = torch.load(self.cfg.general.pretrained_weights)
             model.load_state_dict(weights)
         return model

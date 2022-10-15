@@ -63,7 +63,7 @@ class Trainer:
             batch = batch.to(self.cfg.general.device)
             targets = targets.to(self.cfg.general.device)
 
-            with torch.cuda.amp.autocast(enabled=self.cfg.general.amp):
+            with torch.autocast(device_type=self.cfg.general.device, enabled=self.cfg.general.amp):
                 pred = self._model(batch)
                 loss = self._criterion(pred, targets)
                 score = self._metric(
@@ -97,7 +97,7 @@ class Trainer:
                 batch = batch.to(self.cfg.general.device)
                 targets = targets.to(self.cfg.general.device)
 
-                with torch.cuda.amp.autocast(enabled=self.cfg.general.amp):
+                with torch.autocast(device_type=self.cfg.general.device, enabled=self.cfg.general.amp):
                     pred = self._model(batch)
                     loss = self._criterion(pred, targets)
                     score = self._metric(
@@ -158,7 +158,7 @@ class Trainer:
                 batch = batch.to(self.cfg.general.device)
                 targets = targets.to(self.cfg.general.device)
 
-                with torch.cuda.amp.autocast(enabled=self.cfg.general.amp):
+                with torch.autocast(device_type=self.cfg.general.device, enabled=self.cfg.general.amp):
                     pred = self._model(batch)
 
             predictions.extend(pred.argmax(axis=1).cpu().tolist())
