@@ -131,3 +131,6 @@ dmypy.json
 datasets/
 .vscode/
 logs/
+*.pt
+*.torchscript
+*.pth
