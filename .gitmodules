@@ -1,0 +1,3 @@
+[submodule "02_object_detection/yolov5"]
+	path = 02_object_detection/yolov5
+	url = git@github.com:ultralytics/yolov5.git
