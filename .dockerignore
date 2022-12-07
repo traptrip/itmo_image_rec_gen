@@ -1,0 +1,5 @@
+01_image_classification/
+02_object_detection/
+03_segmentation/checkpoints/
+03_segmentation/datasets/
+03_segmentation/exp/
