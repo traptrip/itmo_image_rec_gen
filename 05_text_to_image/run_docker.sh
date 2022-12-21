@@ -7,5 +7,5 @@ docker run \
     --gpus=all \
     --ipc=host \
     -v $PWD:/cv_lab \
-    --name cv_labs \
+    --name cv_lab \
     cv_lab:latest 'jupyter notebook --ip=0.0.0.0 --port=8889 --no-browser --allow-root'
