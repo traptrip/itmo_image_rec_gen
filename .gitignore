@@ -134,3 +134,7 @@ logs/
 *.pt
 *.torchscript
 *.pth
+checkpoints/
+results/
+SPADE/
+*.zip
